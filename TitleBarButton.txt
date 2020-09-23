@@ -1,0 +1,54 @@
+Titlebar Button Example
+
+OVERVIEW:
+This is an example of how to place a button OVER the Titlebar to give the
+appearance that there is a button ON the Titlebar of a form.  Code can be
+reused with only a few lines of code required.  This example demonstrates
+a command button and a toggle button (graphical checkbox).
+
+INCLUDED:
+There is a class module called clsBtnTitleBar that is used to create
+multiple instances of a button on a form.  This is coupled with a module
+that is used for sub-classing.  A 'fake' button must be placed on the form
+to allow communication between the Titlebar button and the form (this fake
+button is where event code can be placed for execution).  This example
+demonstrates using one Titlebar button per form only.
+
+HOW IT WORKS:
+Create an instance of clsBtnTitleBar to add a button to a form with a
+'fake' button.  The form and the Titlebar button are subclassed so that
+when the Titlebar button is clicked, the click is sent to the 'fake'
+button on the form.  This allows code to be placed in the click event of
+the 'fake' button.
+
+The button is created used CreateWindowEx, the font for the button is
+set, and several properties for the Main form and the button are created
+to allow the sub-classing function to work.
+
+Code appears to be rock-solid.
+
+Robert E. Phelps
+
+Keywords:
+CopyMemory, CallWindowProc, CreateFontIndirect, CreateWindowEx
+DestroyWindow, GetFocus, GetProp, GetSystemMetrics, GetWindowLong
+GetWindowRect, PostMessage, RemoveProp, SendMessage, SetFocus
+SetParent, SetProp, SetWindowLong, SetWindowPos, ShowWindow
+SystemParametersInfo
+
+RECT
+WM_SIZE, WM_LBUTTONUP, WM_WINDOWPOSCHANGED, WM_SETFONT
+BM_SETCHECK, BM_CLICK
+GWL_STYLE, GWL_EXSTYLE
+WS_CAPTION, WS_CHILD, WS_EX_TOOLWINDOW
+WS_THICKFRAME, WS_MAXIMIZEBOX, WS_MINIMIZEBOX
+BS_PUSHBUTTON, BS_AUTOCHECKBOX, BS_PUSHLIKE
+GWL_WNDPROC
+SWP_FRAMECHANGED, SWP_NOACTIVATE
+SW_SHOWNOACTIVATE
+SM_CXFIXEDFRAME, SM_CXSIZEFRAME, SM_CXSIZE
+SM_CXSMSIZE, SM_CYCAPTION, SM_CYSMCAPTION
+WINDOWPOS
+LF_FACESIZE, LOGFONT
+SPI_GETNONCLIENTMETRICS, NONCLIENTMETRICS
+
